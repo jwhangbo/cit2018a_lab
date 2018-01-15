@@ -1,13 +1,85 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>My first Git</title>
-	</head>
+		<title>John Whangbo - Bio</title>
+		<style>
+			* {
+				font-family: Verdana, Geneva, sans-serif;
+			}
 
+			ul {
+				list-style-type: none;
+				line-height: 150%;
+			}
+			
+			#header {
+				width: 100%;
+				display: inline-block;
+				background-color: lightyellow;
+			}
+
+			#main {
+				width: 100%;
+				display: inline-block;
+			}
+
+			#profile {
+				float: left;
+				margin: 16px;
+			}
+
+			#image {
+				max-height: 300px;
+			}
+
+			#halfL {
+				background-color: pink;
+				width: 50%;
+				display: inline-block;
+				padding: 16px;
+			}
+
+			#halfR {
+				background-color: lightblue;
+				width: 50%;
+				display: inline-block;
+				padding: 16px;
+			}
+
+			#wrap {
+				white-space: nowrap;
+			}
+
+			#caption {
+				font-style: italic;
+				font-size: 14px;
+			}
+
+		</style>
+	</head>
+	
 	<body>
-		Welcome to my page!
-		<div>
-			You are the best!
+		<div id="header">
+			<img id="profile" src="img1.jpg">
+			<h1>John Whangbo</h1>
+			<ul>
+				<li>Hello! I studied computer science at SFU for a year before stopping, realizing that it's not really meant for me.</li>
+				<li>One interesting fact about me is that I'm actually Korean, despite my last name sounding anything but.</li>			
+				<li>I like to browse Filipino basket weaving forums in my free time.</li>
+				<li>I hope to become a system administrator in the near future!</li>
+			</ul>
+		</div>
+
+		<div id="wrap">
+			<div id="halfL">
+				<img id="image" src="img2.jpg">
+				<p id="caption">Taken around when I first arrived to Canada, so around 2005</p>
+			</div><!--
+			--><div id="halfR">
+				<img id="image" src="img3.jpg">
+				<p id="caption">A random picture of a dog I found. I don't like pets</p>
+			</div>
 		</div>
 	</body>
+
 </html>
