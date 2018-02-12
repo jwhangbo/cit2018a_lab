@@ -1,94 +1,121 @@
-var avaImg = document.getElementById("image");
-var centerUp = 0;
-var centerLeft = 0;
-var size = 100;
+var zoomWidth = 100;
+var zoomHeight = 70;
+var counter = 0;
 
-document.getElementById("avatar1").addEventListener("click",
+document.getElementById("bg1Btn").addEventListener("click",
 	function(){
-		avaImg.src = "imgs/ava2.png";
+		ch1.style.backgroundImage = "url(imgs/i1.jpg)";
+		ch2.style.backgroundImage = "url(imgs/i2.jpg)";
+		ch3.style.backgroundImage = "url(imgs/i3.jpg)";
+		counter = 1
 });
 
-document.getElementById("avatar2").addEventListener("click",
+document.getElementById("bg2Btn").addEventListener("click",
 	function(){
-		avaImg.src = "imgs/ava1.png";
+		ch1.style.backgroundImage = "url(imgs/i4.jpg)";
+		ch2.style.backgroundImage = "url(imgs/i5.jpg)";
+		ch3.style.backgroundImage = "url(imgs/i6.jpg)";
+		counter = 4
 });
 
-document.getElementById("menubtn").addEventListener("click",
+document.getElementById("bg3Btn").addEventListener("click",
 	function(){
-		menu.style.right = "0px";
+		ch1.style.backgroundImage = "url(imgs/i7.jpg)";
+		ch2.style.backgroundImage = "url(imgs/i8.jpg)";
+		ch3.style.backgroundImage = "url(imgs/i9.jpg)";
+		counter = 7
 });
 
-document.getElementById("upbtn").addEventListener("click",
+document.getElementById("bg4Btn").addEventListener("click",
 	function(){
-		centerUp -= 7;
-		center.style.top = centerUp+"px";
+		ch1.style.backgroundImage = "url(imgs/i10.jpg)";
+		ch2.style.backgroundImage = "url(imgs/i11.jpg)";
+		ch3.style.backgroundImage = "url(imgs/i12.jpg)";
+		counter = 10
 });
 
-document.getElementById("downbtn").addEventListener("click",
+document.getElementById("ch1").addEventListener("mouseenter",
 	function(){
-		centerUp += 7;
-		center.style.top = centerUp+"px";
+		zoom.style.backgroundImage = ch1.style.backgroundImage;
 });
 
-document.getElementById("leftbtn").addEventListener("click",
+document.getElementById("ch2").addEventListener("mouseenter",
 	function(){
-		centerLeft -= 7;
-		center.style.left = centerLeft+"px";
+		zoom.style.backgroundImage = ch2.style.backgroundImage;
 });
 
-document.getElementById("rightbtn").addEventListener("click",
+document.getElementById("ch3").addEventListener("mouseenter",
 	function(){
-		centerLeft += 7;
-		center.style.left = centerLeft+"px";
+		zoom.style.backgroundImage = ch3.style.backgroundImage;
 });
 
-document.getElementById("plus").addEventListener("click",
+document.getElementById("makeBtn").addEventListener("click",
 	function(){
-		size += 1
-		avaImg.style.height = size+"%";
+		bg.style.backgroundImage = zoom.style.backgroundImage;
 });
 
-document.getElementById("minus").addEventListener("click",
+document.getElementById("resetBtn").addEventListener("click",
 	function(){
-		size -= 1
-		avaImg.style.height = size+"%";
+		bg.style.backgroundImage = "none";
 });
 
-document.getElementById("image").addEventListener("click",
+document.getElementById("showBtn").addEventListener("click",
 	function(){
-		upbtn.style.opacity = "0";
-		downbtn.style.opacity = "0";
-		leftbtn.style.opacity = "0";
-		rightbtn.style.opacity = "0";
-		avatar1.style.opacity = "0";
-		avatar2.style.opacity = "0";
-		plus.style.opacity = "0";
-		minus.style.opacity = "0";
+		app1.style.display = "block";
 });
 
-document.getElementById("header").addEventListener("click",
+document.getElementById("hideBtn").addEventListener("click",
 	function(){
-		upbtn.style.opacity = "1";
-		downbtn.style.opacity = "1";
-		leftbtn.style.opacity = "1";
-		rightbtn.style.opacity = "1";
-		avatar1.style.opacity = "1";
-		avatar2.style.opacity = "1";
-		plus.style.opacity = "1";
-		minus.style.opacity = "1";
+		app1.style.display = "none";
 });
 
-document.getElementById("shirtbtn").addEventListener("click",
+document.getElementById("zoom").addEventListener("click",
 	function(){
-		shirt.style.display = "block";
+		zoomcontrols.style.display = "block";
 });
 
-document.getElementById("hatbtn").addEventListener("click",
+document.getElementById("zoomIn").addEventListener("click",
 	function(){
-		hat.style.display = "block";
+		zoomWidth += 10;
+		zoomHeight += 7;
+		zoom.style.width = zoomWidth+"%";
+		zoom.style.height = zoomHeight+"%";
 });
 
-document.getElementById("bowbtn").addEventListener("click",
+document.getElementById("zoomOut").addEventListener("click",
 	function(){
-		bow.style.display = "block";
+		zoomWidth -= 10;
+		zoomHeight -= 7;
+		zoom.style.width = zoomWidth+"%";
+		zoom.style.height = zoomHeight+"%";
+});
+
+document.getElementById("prevBtn").addEventListener("click",
+	function(){
+		if (counter <= 1) {
+			ch1.style.backgroundImage = "url(imgs/i10.jpg)"
+			ch2.style.backgroundImage = "url(imgs/i11.jpg)"
+			ch3.style.backgroundImage = "url(imgs/i12.jpg)"	
+			counter = 10	
+		} else {
+			ch1.style.backgroundImage = "url(imgs/i"+(counter-3)+".jpg"
+			ch2.style.backgroundImage = "url(imgs/i"+(counter-2)+".jpg"
+			ch3.style.backgroundImage = "url(imgs/i"+(counter-1)+".jpg"
+			counter -= 3;
+		}
+});
+
+document.getElementById("nextBtn").addEventListener("click",
+	function(){
+		if (counter == 10 || counter == 0) {
+			ch1.style.backgroundImage = "url(imgs/i1.jpg)"
+			ch2.style.backgroundImage = "url(imgs/i2.jpg)"
+			ch3.style.backgroundImage = "url(imgs/i3.jpg)"	
+			counter = 1			
+		} else {
+			ch1.style.backgroundImage = "url(imgs/i"+(counter+3)+".jpg"
+			ch2.style.backgroundImage = "url(imgs/i"+(counter+4)+".jpg"
+			ch3.style.backgroundImage = "url(imgs/i"+(counter+5)+".jpg"
+			counter += 3;
+		}
 });

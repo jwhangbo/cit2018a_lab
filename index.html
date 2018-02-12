@@ -2,34 +2,40 @@
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="index.css" />
+		<link rel="stylesheet" type="text/css" href="menu.css" />
 	</head>
-
 	<body>
-		<div id="header">AVATAR CREATOR</div>
-		<div id="center">
-			<img id="image" src="imgs/ava1.png">
-			<button id="upbtn">up</button>
-			<button id="rightbtn">right</button>
-			<button id="downbtn">down</button>
-			<button id="leftbtn">left</button>
-			<div>
-				<button id="avatar1">Avatar 1</button>
-				<button id="avatar2">Avatar 2</button>
-				<button id="plus">+</button>
-				<button id="minus">-</button>
+		<div id="bg"></div>
+		<div id="app1">
+			<div id="zoom">
+				<div id="zoomcontrols">
+					<button id="zoomIn" class="zoomBtn">+</button>
+					<button id="zoomOut" class="zoomBtn">-</button>
+				</div>
+			</div>
+			<div id="controls">
+				<button id="prevBtn">Previous</button>
+				<button id="bg1Btn">BG1</button>
+				<button id="bg2Btn">BG2</button>
+				<button id="bg3Btn">BG3</button>
+				<button id="bg4Btn">BG4</button>
+				<button id="nextBtn">Next</button>
+				<br />
+				<div id="ch1" class="bgthumbs"></div>
+				<div id="ch2" class="bgthumbs"></div>
+				<div id="ch3" class="bgthumbs"></div>
 			</div>
 		</div>
 		<div id="menu">
-			<button id="menubtn">menu</button>
-			<img class="menuimg" id="hatbtn" src="imgs/but1.png">
-			<img class="menuimg" id="shirtbtn" src="imgs/but2.png">
-			<img class="menuimg" id="bowbtn" src="imgs/but3.png">
+			<button id="makeBtn" class="menuBtn">Make BG</button>
+			<button id="resetBtn" class="menuBtn">Reset</button>
+			<button id="hideBtn" class="menuBtn">Hide App</button>
+			<button id="showBtn" class="menuBtn">Show App</button>
+			<button id="openBtn">Open</button>
+			<button id="closeBtn">Close</button>
 		</div>
-		<div id="menuAct">
-			<img class="toggle" id="shirt" src="imgs/shirt.png">
-			<img class="toggle" id="hat" src="imgs/hat.png">
-			<img class="toggle" id="bow" src="imgs/bow.png">
-		</div>
+
 		<script src="index.js"></script>
+		<script src="menu.js"></script>
 	</body>
 </html>
