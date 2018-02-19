@@ -23,6 +23,10 @@ menu.addEventListener("click", function(){
 	curElement = menu;
 });
 
+display.addEventListener("click", function(){
+	curElement = disp;
+});
+
 bgInp.addEventListener("click", function(){
 	curElement = bgInp;
 });
