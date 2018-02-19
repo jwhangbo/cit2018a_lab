@@ -1,121 +1,62 @@
-var zoomWidth = 100;
-var zoomHeight = 70;
-var counter = 0;
+var disp = document.getElementById("display");
+var bgInp = document.getElementById("bgText");
+var menu = document.getElementById("menu");
 
-document.getElementById("bg1Btn").addEventListener("click",
-	function(){
-		ch1.style.backgroundImage = "url(imgs/i1.jpg)";
-		ch2.style.backgroundImage = "url(imgs/i2.jpg)";
-		ch3.style.backgroundImage = "url(imgs/i3.jpg)";
-		counter = 1
+var ir = document.getElementById("red");
+var ig = document.getElementById("green");
+var ib = document.getElementById("blue");
+
+var rr = document.getElementById("rred");
+var rg = document.getElementById("rgreen");
+var rb = document.getElementById("rblue");
+
+var colorInp = document.getElementById("colorInp")
+
+var curElement = disp;
+
+document.getElementById("change").addEventListener("click", function(){
+	curElement.style.backgroundColor = bgInp.value;
+	bgInp.value = "";
 });
 
-document.getElementById("bg2Btn").addEventListener("click",
-	function(){
-		ch1.style.backgroundImage = "url(imgs/i4.jpg)";
-		ch2.style.backgroundImage = "url(imgs/i5.jpg)";
-		ch3.style.backgroundImage = "url(imgs/i6.jpg)";
-		counter = 4
+menu.addEventListener("click", function(){
+	curElement = menu;
 });
 
-document.getElementById("bg3Btn").addEventListener("click",
-	function(){
-		ch1.style.backgroundImage = "url(imgs/i7.jpg)";
-		ch2.style.backgroundImage = "url(imgs/i8.jpg)";
-		ch3.style.backgroundImage = "url(imgs/i9.jpg)";
-		counter = 7
+bgInp.addEventListener("click", function(){
+	curElement = bgInp;
 });
 
-document.getElementById("bg4Btn").addEventListener("click",
-	function(){
-		ch1.style.backgroundImage = "url(imgs/i10.jpg)";
-		ch2.style.backgroundImage = "url(imgs/i11.jpg)";
-		ch3.style.backgroundImage = "url(imgs/i12.jpg)";
-		counter = 10
+ir.addEventListener("change", function(){
+	curElement.style.backgroundColor = "rgb("+ir.value+","+ig.value+","+ib.value+")";
+	rr.value = ir.value;
 });
 
-document.getElementById("ch1").addEventListener("mouseenter",
-	function(){
-		zoom.style.backgroundImage = ch1.style.backgroundImage;
+ig.addEventListener("change", function(){
+	curElement.style.backgroundColor = "rgb("+ir.value+","+ig.value+","+ib.value+")";
+	rg.value = ig.value;
 });
 
-document.getElementById("ch2").addEventListener("mouseenter",
-	function(){
-		zoom.style.backgroundImage = ch2.style.backgroundImage;
+ib.addEventListener("change", function(){
+	curElement.style.backgroundColor = "rgb("+ir.value+","+ig.value+","+ib.value+")";
+	rb.value = ib.value;
 });
 
-document.getElementById("ch3").addEventListener("mouseenter",
-	function(){
-		zoom.style.backgroundImage = ch3.style.backgroundImage;
+rr.addEventListener("change", function(){
+	curElement.style.backgroundColor = "rgb("+rr.value+","+rg.value+","+rb.value+")";
+	ir.value = rr.value;
 });
 
-document.getElementById("makeBtn").addEventListener("click",
-	function(){
-		bg.style.backgroundImage = zoom.style.backgroundImage;
+rg.addEventListener("change", function(){
+	curElement.style.backgroundColor = "rgb("+rr.value+","+rg.value+","+rb.value+")";
+	ig.value = rg.value;
 });
 
-document.getElementById("resetBtn").addEventListener("click",
-	function(){
-		bg.style.backgroundImage = "none";
+rb.addEventListener("change", function(){
+	curElement.style.backgroundColor = "rgb("+rr.value+","+rg.value+","+rb.value+")";
+	ib.value = rb.value;
 });
 
-document.getElementById("showBtn").addEventListener("click",
-	function(){
-		app1.style.display = "block";
-});
-
-document.getElementById("hideBtn").addEventListener("click",
-	function(){
-		app1.style.display = "none";
-});
-
-document.getElementById("zoom").addEventListener("click",
-	function(){
-		zoomcontrols.style.display = "block";
-});
-
-document.getElementById("zoomIn").addEventListener("click",
-	function(){
-		zoomWidth += 10;
-		zoomHeight += 7;
-		zoom.style.width = zoomWidth+"%";
-		zoom.style.height = zoomHeight+"%";
-});
-
-document.getElementById("zoomOut").addEventListener("click",
-	function(){
-		zoomWidth -= 10;
-		zoomHeight -= 7;
-		zoom.style.width = zoomWidth+"%";
-		zoom.style.height = zoomHeight+"%";
-});
-
-document.getElementById("prevBtn").addEventListener("click",
-	function(){
-		if (counter <= 1) {
-			ch1.style.backgroundImage = "url(imgs/i10.jpg)"
-			ch2.style.backgroundImage = "url(imgs/i11.jpg)"
-			ch3.style.backgroundImage = "url(imgs/i12.jpg)"	
-			counter = 10	
-		} else {
-			ch1.style.backgroundImage = "url(imgs/i"+(counter-3)+".jpg"
-			ch2.style.backgroundImage = "url(imgs/i"+(counter-2)+".jpg"
-			ch3.style.backgroundImage = "url(imgs/i"+(counter-1)+".jpg"
-			counter -= 3;
-		}
-});
-
-document.getElementById("nextBtn").addEventListener("click",
-	function(){
-		if (counter == 10 || counter == 0) {
-			ch1.style.backgroundImage = "url(imgs/i1.jpg)"
-			ch2.style.backgroundImage = "url(imgs/i2.jpg)"
-			ch3.style.backgroundImage = "url(imgs/i3.jpg)"	
-			counter = 1			
-		} else {
-			ch1.style.backgroundImage = "url(imgs/i"+(counter+3)+".jpg"
-			ch2.style.backgroundImage = "url(imgs/i"+(counter+4)+".jpg"
-			ch3.style.backgroundImage = "url(imgs/i"+(counter+5)+".jpg"
-			counter += 3;
-		}
+colorInp.addEventListener("change", function(){
+	curElement.style.backgroundColor = colorInp.value;
 });

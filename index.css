@@ -1,62 +1,23 @@
-#app1 {
-	position: fixed;
-	width: 70vw;
-	height: 70vh;
-	top: 0px;
-	bottom: 0px;
-	right: 0px;
-	left: 0px;
-	margin: auto;
-}
-
-#zoom {
-	width: 100%;
-	height: 70%;
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	margin-bottom: 10px;
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 100%;
-	max-height: 70%;
-}
-
-#zoomcontrols {
-	position: absolute;
-	right: 0px;
-	top: 0px;
-	width: 75px;
-	display: none;
-}
-
-.zoomBtn {
-	width: 100%;
+#menu {
+	border-bottom: 1px solid #CCC;
+	padding: 5px;
+	text-align: right;
 }
 
 #controls {
-	text-align: center;
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+	padding: 5px;
 }
 
-.bgthumbs {
-	display: inline-block;
-	width: 75px;
-	height: 75px;
-	margin: 5px;
-	border-radius: 100px;
-	border: 5px solid #ADA;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-}
-
-#bg {
+#display {
+	width: 70vw;
+	height: 50vh;
 	position: fixed;
 	left: 0px;
+	right: 0px;
+	bottom: 0px;
 	top: 0px;
-	width: 100vw;
-	height: 100vh;
-	z-index: -1;
-	background-size: cover;
-	background-position: bottom;
+	margin: auto;
 }
