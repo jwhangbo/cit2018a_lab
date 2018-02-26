@@ -1,33 +1,57 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Tutorial 3</title>
+		<title></title>
 		<link href="index.css" rel="stylesheet" type="text/css" />
+		<link href="menu.css" rel="stylesheet" type="text/css" />
 	</head>
 
 	<body>
 		<div id="menu">
-			<a href="index.html">Background</a>
-			<a href="page2.html">Page 2</a>
+			<img id="downImg" src="imgs/down.png" />
+			<div id="links">
+				<a href="index.html">Home</a>
+				<hr />
+				<a href="demo.html">Demo</a>
+			</div>
 		</div>
-		<div id="controls">
-			<input type="text" id="bgText" placeholder="Type a color in here" />
-			<button id="change">Change Color</button>
-			<hr />
-
-			<input type="number" min="0" max="255" value="0" id="red" />
-			<input type="number" min="0" max="255" value="0" id="green" />
-			<input type="number" min="0" max="255" value="0" id="blue" />
-			<hr />
-
-			<input type="range" min="0" max="255" value="0" id="rred" />
-			<input type="range" min="0" max="255" value="0" id="rgreen" />
-			<input type="range" min="0" max="255" value="0" id="rblue" />
-			<hr />
-
-			<input type="color" id="colorInp" />
+		<div id="header">
+			<img id="logo" src="imgs/logo.png" />
 		</div>
-		<div id="display"></div>
+		<div id="home">
+			<div id="navigation">
+				<div class="item" id="bg1">
+					<div class="subTitleBox">
+						<div class="subTitle">Head Gears</div>
+					</div>
+				</div>
+				<div class="item" id="bg2">
+					<div class="subTitleBox">
+						<div class="subTitle">Body Gears</div>
+					</div>
+				</div>			
+				<div class="item" id="bg3">
+					<div class="subTitleBox">
+						<div class="subTitle">Leg Gears</div>
+					</div>
+				</div>
+				<div class="item" id="bg4">
+					<div class="subTitleBox">
+						<div class="subTitle">Foot Gears</div>
+					</div>
+				</div>
+			</div>
+			<div id="main">
+				<div id="mcontents">
+					<p id="mcTitle">Null</p>
+					<hr />
+					<div id="mcimg1"></div>
+					<div id="mcimg2"></div>
+					<div id="mcimg3"></div>
+				</div>
+			</div>
+		</div>
 		<script src="index.js"></script>
+		<script src="menu.js"></script>
 	</body>
 </html>
