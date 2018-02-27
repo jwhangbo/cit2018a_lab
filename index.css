@@ -83,6 +83,7 @@ body {
 	margin: auto;
 	width: 70%;
 	height: 40%;
+	text-align: center;
 	background-color: white;
 }
 
@@ -92,42 +93,34 @@ body {
 }
 
 #mcimg1 {
-	position: absolute;
-	height: 150px;
 	width: 150px;
-	left: 0px;
-	right: 350px;
-	top: 80px;
-	margin: auto;
-	background-image: url(imgs/gears/h3.png);
-	background-size: 120px;
-	background-position: center;
+	height: 150px;
+	display: inline-block;
+	margin-left: 15px;
+	margin-right: 15px;
+	background-size: contain;
 	background-repeat: no-repeat;
+	background-position: 50% 50%;
 }
 
 #mcimg2 {
-	position: absolute;
-	height: 150px;
 	width: 150px;
-	left: 0px;
-	right: 0px;
-	margin: auto;
-	background-image: url(imgs/gears/h3.png);
-	background-size: 120px;
-	background-position: center;
+	height: 150px;
+	display: inline-block;
+	margin-left: 15px;
+	margin-right: 15px;
+	background-size: contain;
 	background-repeat: no-repeat;
+	background-position: 50% 50%;
 }
 
 #mcimg3 {
-	position: absolute;
-	height: 150px;
 	width: 150px;
-	left: 350px;
-	right: 0px;
-	top: 80px;
-	margin: auto;
-	background-image: url(imgs/gears/h3.png);
-	background-size: 120px;
-	background-position: center;	
+	height: 150px;
+	display: inline-block;
+	margin-left: 15px;
+	margin-right: 15px;
+	background-size: contain;
 	background-repeat: no-repeat;
+	background-position: 50% 50%;
 }
