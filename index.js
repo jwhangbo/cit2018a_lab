@@ -1,40 +1,61 @@
-var menu = document.getElementById("menu");
-var main = document.getElementById("main");
-var home = document.getElementById("home");
+var dispDiv = document.getElementById("display"),
+	st1 = document.getElementById("st1"),
+	st2 = document.getElementById("st2"),
+	imgSrc = null,
+	imgH = null,
+	stickerHeight = document.getElementById("stickerHeight"),
+	stInp = document.getElementById("stickerUrl"),
+	stC = document.getElementById("cursor");
 
-var mcTitle = document.getElementById("mcTitle");
-var mcimg1 = document.getElementById("mcimg1");
-var mcimg2 = document.getElementById("mcimg2");
-var mcimg3 = document.getElementById("mcimg3");
-
-document.getElementById("bg1").addEventListener("click", function(){
-	main.style.display = "block";
-	mcTitle.innerHTML = "Head Gear";
-	mcimg1.style.backgroundImage = "url(imgs/gears/h1.png)";
-	mcimg2.style.backgroundImage = "url(imgs/gears/h2.png)";
-	mcimg3.style.backgroundImage = "url(imgs/gears/h3.png)";
+document.getElementById("bgcolor").addEventListener("change", function(){
+	dispDiv.style.backgroundColor = this.value;
 });
 
-document.getElementById("bg2").addEventListener("click", function(){
-	main.style.display = "block";
-	mcTitle.innerHTML = "Body Gear";
-	mcimg1.style.backgroundImage = "url(imgs/gears/b1.png)";
-	mcimg2.style.backgroundImage = "url(imgs/gears/b2.png)";
-	mcimg3.style.backgroundImage = "url(imgs/gears/b3.png)";
+st1.addEventListener("click", function(){
+	changeImg(this);
 });
 
-document.getElementById("bg3").addEventListener("click", function(){
-	main.style.display = "block";
-	mcTitle.innerHTML = "Leg Gear";
-	mcimg1.style.backgroundImage = "url(imgs/gears/l1.png)";
-	mcimg2.style.backgroundImage = "url(imgs/gears/l2.png)";
-	mcimg3.style.backgroundImage = "url(imgs/gears/l3.png)";
+st2.addEventListener("click", function(){
+	changeImg(this);
 });
 
-document.getElementById("bg4").addEventListener("click", function(){
-	main.style.display = "block";
-	mcTitle.innerHTML = "Feet Gear";
-	mcimg1.style.backgroundImage = "url(imgs/gears/f1.png)";
-	mcimg2.style.backgroundImage = "url(imgs/gears/f2.png)";
-	mcimg3.style.backgroundImage = "url(imgs/gears/f3.png)";
+dispDiv.addEventListener("click", function(ev){
+	var newImg = document.createElement("img");
+	newImg.src = imgSrc;
+	newImg.className = "displayStickers";
+	dispDiv.appendChild(newImg);
+	newImg.style.height = imgH+"px";
+	newImg.style.left = ev.pageX+"px";
+	newImg.style.top = ev.pageY+"px";
 });
+
+stInp.addEventListener("keyup", function(ev){
+	if(ev.keyCode == 13){
+		var newSticker = document.createElement("img");
+		newSticker.src = stInp.value;
+		newSticker.className = "stickers";
+		document.getElementById("stickers").appendChild(newSticker);
+		stInp.value = "";
+		newSticker.addEventListener("click", function(){
+			changeImg(this);
+		});
+	}
+});
+
+stickerHeight.addEventListener("keyup", function(ev){
+	if(ev.keyCode == 13){
+		if(stickerHeight.value > 0){
+			imgH = stickerHeight.value;
+		}
+	}
+});
+
+dispDiv.addEventListener("mousemove", function(ev){
+	stC.style.top = ev.pageY+"px";
+	stC.style.left = ev.pageX+"px";
+});
+
+function changeImg(el){
+	imgSrc = el.src;
+	stC.src = imgSrc;
+};
