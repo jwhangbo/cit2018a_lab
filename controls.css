@@ -1,0 +1,32 @@
+.inputs {
+	width: 80px;
+	text-align: center; 
+}
+
+#range, #autoRandomCreate, #stopAutoCreate {
+	background-color: white;
+	border-radius: 7px;
+}
+
+#number {
+	background-color: black;
+	color: white;
+}
+
+#random {
+	background-color: pink;
+	color: purple;
+}
+
+#add {
+	background-color: darkgrey;
+	color: white;
+}
+
+.addDiv {
+	position: relative;
+	width: 100px;
+	height: 100px;
+	margin: 10px;
+	display: inline-block;
+}
